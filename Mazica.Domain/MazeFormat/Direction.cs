@@ -2,37 +2,47 @@
 {
 	internal class Direction
 	{
-		public static readonly Direction North;
-		public static readonly Direction South;
-		public static readonly Direction East;
-		public static readonly Direction West;
-		public static readonly Direction[] values;
+		public static Direction[] Values { get; private set; }
 
-		public readonly int bit;
-		public readonly int dx;
-		public readonly int dy;
-		public Direction opposite;
+		public static Direction North { get; private set; }
+		public static Direction South { get; private set; }
+		public static Direction East { get; private set; }
+		public static Direction West { get; private set; }
+		public static Direction Upper { get; private set; }
+		public static Direction Lower { get; private set; }
+
+		public MazeCellWalls Bit { get; private set; }
+		public int Dx { get; private set; }
+		public int Dy { get; private set; }
+		public int Dz { get; private set; }
+		public Direction Opposite { get; private set; }
 
 		// use the static initializer to resolve forward references
 		static Direction()
 		{
-			North = new Direction(1, 0, -1);
-			South = new Direction(2, 0, 1);
-			East = new Direction(4, 1, 0);
-			West = new Direction(8, -1, 0);
+			North = new Direction(MazeCellWalls.North, 0, -1, 0);
+			South = new Direction(MazeCellWalls.South, 0, 1, 0);
+			East = new Direction(MazeCellWalls.East, 1, 0, 0);
+			West = new Direction(MazeCellWalls.West, -1, 0, 0);
+			Upper = new Direction(MazeCellWalls.Upper, 0, 0, -1);
+			Lower = new Direction(MazeCellWalls.Lower, 0, 0, 1);
 
-			North.opposite = South;
-			South.opposite = North;
-			East.opposite = West;
-			West.opposite = East;
-			values = new[] { North, South, East, West };
+			North.Opposite = South;
+			South.Opposite = North;
+			East.Opposite = West;
+			West.Opposite = East;
+			Upper.Opposite = Lower;
+			Lower.Opposite = Upper;
+
+			Values = new[] { North, South, East, West, Upper, Lower };
 		}
 
-		private Direction(int bit, int dx, int dy)
+		private Direction(MazeCellWalls bit, int dx, int dy, int dz)
 		{
-			this.bit = bit;
-			this.dx = dx;
-			this.dy = dy;
+			Bit = bit;
+			Dx = dx;
+			Dy = dy;
+			Dz = dz;
 		}
 	};
 }

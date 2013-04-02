@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Mazica.Utility;
 
 namespace Mazica.Domain.MazeFormat
 {
@@ -7,51 +7,45 @@ namespace Mazica.Domain.MazeFormat
 	{
 		private readonly int _x;
 		private readonly int _y;
-		private readonly int[,] _maze;
-		private static readonly Random RAND = new Random();
+		private readonly int _z;
+		private readonly MazeCellWalls[, ,] _maze;
 
-		public MazeGenerator(int x, int y) {
-		this._x = x;
-		this._y = y;
-		_maze = new int[this._x,this._y];
-		generateMaze(0, 0);
-	}
-
-		private void generateMaze(int cx, int cy)
+		private MazeGenerator(int x, int y, int z)
 		{
-			Direction[] directions = Direction.values;
-			Shuffle(directions);
+			_x = x;
+			_y = y;
+			_z = z;
+			_maze = new MazeCellWalls[_x, _y, _z];
+			GenerateMaze(0, 0, 0);
+		}
+
+		private void GenerateMaze(int cx, int cy, int cz)
+		{
+			var directions = Direction.Values;
+			directions.Shuffle();
 			foreach (var dir in directions)
 			{
-				int nx = cx + dir.dx;
-				int ny = cy + dir.dy;
-				if (between(nx, _x) && between(ny, _y)
-						&& (_maze[nx,ny] == 0))
+				var nx = cx + dir.Dx;
+				var ny = cy + dir.Dy;
+				var nz = cz + dir.Dz;
+				if (Between(nx, _x) && Between(ny, _y) && Between(nz, _z) && (_maze[nx, ny, nz] == 0))
 				{
-					_maze[cx,cy] |= dir.bit;
-					_maze[nx,ny] |= dir.opposite.bit;
-					generateMaze(nx, ny);
+					_maze[cx, cy, nz] |= dir.Bit;
+					_maze[nx, ny, nz] |= dir.Opposite.Bit;
+					GenerateMaze(nx, ny, nz);
 				}
 			}
 		}
 
-		private static bool between(int v, int upper)
+		private static bool Between(int v, int upper)
 		{
 			return (v >= 0) && (v < upper);
 		}
 
-		public static void Shuffle<T>(IList<T> list)
+		public static MazeCellWalls[,,] Generate(int x, int y, int z)
 		{
-			Random rng = new Random();
-			int n = list.Count;
-			while (n > 1)
-			{
-				n--;
-				int k = rng.Next(n + 1);
-				T value = list[k];
-				list[k] = list[n];
-				list[n] = value;
-			}
+			var gen = new MazeGenerator(x, y, z);
+			return gen._maze;
 		}
 	}
 }
