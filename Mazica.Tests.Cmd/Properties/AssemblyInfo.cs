@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Mazica.Console.Tests")]
+[assembly: AssemblyTitle("Mazica.Tests.Cmd")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Mazica.Console.Tests")]
+[assembly: AssemblyProduct("Mazica.Tests.Cmd")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c7a9a80d-a33b-4617-b1f4-b9514485f769")]
+[assembly: Guid("066c53c0-0697-4a2a-b696-7b5d406516d3")]
 
 // Version information for an assembly consists of the following four values:
 //

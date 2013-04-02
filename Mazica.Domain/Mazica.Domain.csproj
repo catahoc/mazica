@@ -50,6 +50,8 @@
     <Compile Include="MazeData.cs" />
     <Compile Include="MazeFinish.cs" />
     <Compile Include="MazeFormat\Direction.cs" />
+    <Compile Include="MazeFormat\MazeArray.cs" />
+    <Compile Include="MazeFormat\MazeCellWalls.cs" />
     <Compile Include="MazeFormat\MazeGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

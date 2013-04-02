@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mazica.Domain.MazeFormat
+namespace Mazica.Domain
 {
 	[Flags]
 	public enum MazeCellWalls
