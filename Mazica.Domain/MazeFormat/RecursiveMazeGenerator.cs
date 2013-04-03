@@ -9,12 +9,12 @@ namespace Mazica.Domain
 	{
 		private readonly Random _rand = new Random();
 
-		public MazeArray Generate(int lonSize, int latSize, int heiSize)
+		public MazeCellWalls[, ,] Generate(int lonSize, int latSize, int heiSize)
 		{
 			var maze = new MazeCellWalls[lonSize,latSize,heiSize];
 			var area = new MazeArea(lonSize, latSize, heiSize);
 			Process(maze, area);
-			return new MazeArray(maze);
+			return maze;
 		}
 
 		public void Process(MazeCellWalls[,,] maze, MazeArea area)
@@ -23,7 +23,15 @@ namespace Mazica.Domain
 			if (area.ToLon - area.FromLon > 1) processors.Add(ProcessLon);
 			if (area.ToLat - area.FromLat > 1) processors.Add(ProcessLat);
 			if (area.ToHei - area.FromHei > 1) processors.Add(ProcessHei);
-			if (processors.Any()) processors.Random()(maze, area);
+			if (processors.Any())
+			{
+				var processor = processors.Random();
+				var subareas = processor(maze, area);
+				foreach (var subArea in subareas)
+				{
+					Process(maze, subArea);
+				}
+			}
 		}
 
 		private IEnumerable<MazeArea> ProcessLon(MazeCellWalls[,,] maze, MazeArea area)
@@ -31,8 +39,17 @@ namespace Mazica.Domain
 			var lon = _rand.Next(area.FromLon + 1, area.ToLon);
 			var lat = _rand.Next(area.FromLat, area.ToLat);
 			var hei = _rand.Next(area.FromHei, area.ToHei);
-			maze[lon - 1, lat, hei] |= MazeCellWalls.East;
-			maze[lon, lat, hei] |= MazeCellWalls.West;
+			for (var lati = area.FromLat; lati < area.ToLat; lati++)
+			{
+				for (var heii = area.FromHei; heii < area.ToHei; heii++)
+				{
+					if (heii != hei || lati != lat)
+					{
+						maze[lon - 1, lati, heii] |= MazeCellWalls.East;
+						maze[lon, lati, heii] |= MazeCellWalls.West;
+					}
+				}
+			}
 			return area.DivideByLon(lon);
 		}
 
@@ -41,8 +58,17 @@ namespace Mazica.Domain
 			var lat = _rand.Next(area.FromLat + 1, area.ToLat);
 			var lon = _rand.Next(area.FromLon, area.ToLon);
 			var hei = _rand.Next(area.FromHei, area.ToHei);
-			maze[lon, lat - 1, hei] |= MazeCellWalls.North;
-			maze[lon, lat, hei] |= MazeCellWalls.South;
+			for (var loni = area.FromLon; loni < area.ToLon; loni++)
+			{
+				for (var heii = area.FromHei; heii < area.ToHei; heii++)
+				{
+					if (heii != hei || loni != lon)
+					{
+						maze[loni, lat - 1, heii] |= MazeCellWalls.North;
+						maze[loni, lat, heii] |= MazeCellWalls.South;
+					}
+				}
+			}
 			return area.DivideByLat(lat);
 		}
 
@@ -51,8 +77,17 @@ namespace Mazica.Domain
 			var hei = _rand.Next(area.FromHei + 1, area.ToHei);
 			var lat = _rand.Next(area.FromLat, area.ToLat);
 			var lon = _rand.Next(area.FromLon, area.ToLon);
-			maze[lon, lat, hei - 1] |= MazeCellWalls.Upper;
-			maze[lon, lat, hei] |= MazeCellWalls.Lower;
+			for (var loni = area.FromLon; loni < area.ToLon; loni++)
+			{
+				for (var lati = area.FromLat; lati < area.ToLat; lati++)
+				{
+					if (lati != lat || loni != lon)
+					{
+						maze[loni, lati, hei - 1] |= MazeCellWalls.Upper;
+						maze[loni, lati, hei] |= MazeCellWalls.Lower;
+					}
+				}
+			}
 			return area.DivideByHei(hei);
 		}
 	}

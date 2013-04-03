@@ -24,6 +24,7 @@ namespace Mazica.Tests.Cmd
 		public void Play()
 		{
 			var maze = new RecursiveMazeGenerator().Generate(SIZE, SIZE, SIZE);
+			MazeUtils.FillBorderWalls(maze);
 			ConsoleKey key;
 			do
 			{

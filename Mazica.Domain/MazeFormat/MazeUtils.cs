@@ -2,8 +2,11 @@
 {
 	public class MazeUtils
 	{
-		public static void FillBorderWalls(MazeCellWalls[,,] maze, int lonSize, int latSize, int heiSize)
+		public static void FillBorderWalls(MazeCellWalls[,,] maze)
 		{
+			var lonSize = maze.GetLength(0);
+			var latSize = maze.GetLength(1);
+			var heiSize = maze.GetLength(2);
 			for (int lon = 0; lon < lonSize; lon++)
 			{
 				for (int lat = 0; lat < latSize; lat++)
