@@ -5,7 +5,7 @@ namespace Mazica.Tests.Cmd
 {
 	public class SimpleMazeGame
 	{
-		private const int SIZE = 4;
+		private const int SIZE = 2;
 		private const int CELL_W = 4;
 		private const int CELL_H = 2;
 		private const char WALL_CHAR = '#';
@@ -19,16 +19,15 @@ namespace Mazica.Tests.Cmd
 		private int _lat = 0;
 		private int _hei = 0;
 
-		private char[,] _chars = new char[SIZE * (CELL_W + 1) + 1, SIZE * (CELL_H + 1) + 1];
+		private readonly char[,] _chars = new char[SIZE * (CELL_W + 1) + 1, SIZE * (CELL_H + 1) + 1];
 
 		public void Play()
 		{
-			var maze = MazeGenerator.Generate(SIZE, SIZE, SIZE);
+			var maze = new RecursiveMazeGenerator().Generate(SIZE, SIZE, SIZE);
 			ConsoleKey key;
 			do
 			{
 				Console.Clear();
-				Console.ReadKey();
 				Console.WriteLine("{1}:{2}, level {0}:", _hei, _lon, _lat);
 				for (var lon = 0; lon < SIZE; lon++)
 				{

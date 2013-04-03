@@ -10,6 +10,8 @@ namespace Mazica.Domain
 		East = 4,
 		West = 8,
 		Upper = 16,
-		Lower = 32
+		Lower = 32,
+
+		All = 63
 	}
 }

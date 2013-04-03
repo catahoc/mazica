@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Mazica.Utility
 {
@@ -17,6 +18,13 @@ namespace Mazica.Utility
 				list[k] = list[n];
 				list[n] = value;
 			}
+		}
+		public static T Random<T>(this IEnumerable<T> source)
+		{
+			var rnd = new Random();
+			var list = source.ToList();
+			var len = list.Count();
+			return list.ElementAt(rnd.Next(len));
 		}
     }
 }

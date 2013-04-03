@@ -46,5 +46,10 @@
 			DeltaLat = dy;
 			DeltaHei = dz;
 		}
+
+		public override string ToString()
+		{
+			return Bit.ToString();
+		}
 	};
 }
