@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="BinaryMazeConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +55,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MazeGen\MazeGen.csproj">
+      <Project>{10e56992-66a7-4db9-a50a-f8bc0f240420}</Project>
+      <Name>MazeGen</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mazica.Utility\Mazica.Utility.csproj">
       <Project>{2e26bcf3-6d24-4a71-af8d-588f20836434}</Project>
       <Name>Mazica.Utility</Name>
