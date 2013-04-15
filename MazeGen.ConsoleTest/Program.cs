@@ -10,8 +10,8 @@ namespace MazeGen.ConsoleTest
     {
         static void Main(string[] args)
         {
-            var size = 3;
-            var sizez = 2;
+            var size = 10;
+            var sizez = 1;
             var gen = new RecursiveMazeGenerator(size, size, sizez);
             var maze = gen.Generate();
             for (int z = 0; z < sizez; z++)

@@ -18,9 +18,9 @@ namespace MazeGen
             Rand = new Random();
         }
 
-        public abstract Maze Generate();
+        public abstract MazeMatrix Generate();
 
-        protected Maze GetEmpty()
+        protected MazeMatrix GetEmpty()
         {
             var result = new Wall[Width,Height,Depth];
             for (var x = 0; x < Width; x++)
@@ -44,10 +44,10 @@ namespace MazeGen
                     result[Width-1, y, z] |= Wall.Hx;
                 }
             }
-            return new Maze(result);
+            return new MazeMatrix(result);
         }
 
-        protected Maze GetFull()
+        protected MazeMatrix GetFull()
         {
             var result = new Wall[Width, Height, Depth];
             for (var x = 0; x < Width; x++)
@@ -60,7 +60,7 @@ namespace MazeGen
                     }
                 }
             }
-            return new Maze(result);
+            return new MazeMatrix(result);
         }
     }
 }

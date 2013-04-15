@@ -47,7 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
-    <Compile Include="BinaryMazeConverter.cs" />
+    <Compile Include="Entities\Path.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="MazicaContext.cs" />
+    <Compile Include="NamedEntity.cs" />
+    <Compile Include="Entities\Maze.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

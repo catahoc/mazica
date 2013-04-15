@@ -9,7 +9,7 @@ namespace MazeGen
         {
         }
 
-        public override Maze Generate()
+        public override MazeMatrix Generate()
         {
             var result = GetFull();
             var area = new Area(result);
@@ -17,7 +17,7 @@ namespace MazeGen
             return result;
         }
 
-        private void Visit(Maze result, Area area)
+        private void Visit(MazeMatrix result, Area area)
         {
             var w = area.Width - 1;
             var h = area.Height - 1;
@@ -35,7 +35,7 @@ namespace MazeGen
             }
         }
 
-        private void Divide(Maze result, Area area, Direction d)
+        private void Divide(MazeMatrix result, Area area, Direction d)
         {
             var whereMakeHole = new Point();
             var dx = NominalRand(area.Size(d) - 1) + area.Lower[d] + 1;

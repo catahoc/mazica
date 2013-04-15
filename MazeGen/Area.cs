@@ -22,10 +22,10 @@ namespace MazeGen
             Higher = higher;
         }
 
-        public Area(Maze maze)
+        public Area(MazeMatrix mazeMatrix)
         {
             Lower = new Point();
-            Higher = new Point(maze.Width, maze.Height, maze.Depth);
+            Higher = new Point(mazeMatrix.Width, mazeMatrix.Height, mazeMatrix.Depth);
         }
         public IEnumerable<Area> Split(Direction d, int where)
         {

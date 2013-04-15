@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mazica.Domain
+namespace Mazica.Utility
 {
     public class Account
     {

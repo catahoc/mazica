@@ -1,15 +1,15 @@
 ﻿namespace MazeGen
 {
-    public class Maze
+    public class MazeMatrix
     {
         private readonly Wall[,,] _walls;
 
-        public Maze(Wall[,,] walls)
+        public MazeMatrix(Wall[,,] walls)
         {
             _walls = walls;
         }
 
-	    public Maze(int x, int y, int z)
+	    public MazeMatrix(int x, int y, int z)
 	    {
 		    _walls = new Wall[x,y,z];
 	    }

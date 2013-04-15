@@ -2,6 +2,6 @@
 {
     public interface IMazeGenerator
     {
-        Maze Generate();
+        MazeMatrix Generate();
     }
 }
