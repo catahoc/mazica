@@ -47,15 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
-    <Compile Include="MazeBegin.cs" />
-    <Compile Include="MazeContext.cs" />
-    <Compile Include="MazeData.cs" />
-    <Compile Include="MazeFinish.cs" />
-    <Compile Include="MazeFormat\Direction.cs" />
-    <Compile Include="MazeFormat\MazeArea.cs" />
-    <Compile Include="MazeFormat\MazeCellWalls.cs" />
-    <Compile Include="MazeFormat\MazeUtils.cs" />
-    <Compile Include="MazeFormat\RecursiveMazeGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
