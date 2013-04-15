@@ -50,11 +50,20 @@
     <Compile Include="Entities\Path.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="MazicaContext.cs" />
+    <Compile Include="Migrations\201304152002269_initial.cs" />
+    <Compile Include="Migrations\201304152002269_initial.Designer.cs">
+      <DependentUpon>201304152002269_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NamedEntity.cs" />
     <Compile Include="Entities\Maze.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\commons\data.config">
+      <Link>data.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -67,6 +76,11 @@
       <Project>{2e26bcf3-6d24-4a71-af8d-588f20836434}</Project>
       <Name>Mazica.Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201304152002269_initial.resx">
+      <DependentUpon>201304152002269_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
