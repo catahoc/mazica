@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Web;
+using Mazica.Domain;
+using Mazica.Utility;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
@@ -48,6 +50,8 @@ namespace Mazica.Web
 		/// <param name="kernel">The kernel.</param>
 		private static void RegisterServices(IKernel kernel)
 		{
+			kernel.Bind<MazicaContext>().ToSelf().InRequestScope();
+			kernel.Bind<IMapper>().To<CommonMapper>().InSingletonScope();
 		}
 	}
 }
