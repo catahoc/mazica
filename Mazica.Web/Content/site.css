@@ -19,3 +19,7 @@
 .validation-summary-valid {
     display: none;
 }
+
+body {
+	min-height: 600px;
+}

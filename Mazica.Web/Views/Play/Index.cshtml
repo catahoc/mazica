@@ -1,8 +1,9 @@
 ﻿@{
 	ViewBag.Title = "Начать игру";
-	Layout = "/Shared/layout.cshtml";
+	Layout = "/Views/Shared/layout.cshtml";
 }
-
-<h2>Начать игру</h2>
-
-<button></button>
+<div id="RenderContext"/>
+@section Scripts
+{
+	<script type="text/javascript" src="@Url.Content("../../Scripts/Play/Index.js")"></script>
+}
