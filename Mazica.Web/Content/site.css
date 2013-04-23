@@ -20,6 +20,6 @@
     display: none;
 }
 
-body {
-	min-height: 600px;
+html, body {
+	height: 100%;
 }

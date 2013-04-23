@@ -4,15 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4CA7AF03-AD12-44D1-A99C-4AD35D354655}</ProjectGuid>
+    <ProjectGuid>{2BB6BF13-462B-4E32-981B-37026D1FE8F9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mazica.Tests</RootNamespace>
-    <AssemblyName>Mazica.Tests</AssemblyName>
+    <RootNamespace>Mazica.WebObjects</RootNamespace>
+    <AssemblyName>Mazica.WebObjects</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,12 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,32 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JsonTests.cs" />
+    <Compile Include="JsonMaze.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\commons\data.config">
-      <Link>data.config</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MazeGen\MazeGen.csproj">
       <Project>{10e56992-66a7-4db9-a50a-f8bc0f240420}</Project>
       <Name>MazeGen</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Mazica.Domain\Mazica.Domain.csproj">
-      <Project>{cfd9bd7c-7185-410e-a30f-81f9b01e5818}</Project>
-      <Name>Mazica.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Mazica.WebObjects\Mazica.WebObjects.csproj">
-      <Project>{2bb6bf13-462b-4e32-981b-37026d1fe8f9}</Project>
-      <Name>Mazica.WebObjects</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

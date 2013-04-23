@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeGen.ConsoleTest", "Maze
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeGen", "MazeGen\MazeGen.csproj", "{10E56992-66A7-4DB9-A50A-F8BC0F240420}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mazica.WebObjects", "Mazica.WebObjects\Mazica.WebObjects.csproj", "{2BB6BF13-462B-4E32-981B-37026D1FE8F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{10E56992-66A7-4DB9-A50A-F8BC0F240420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10E56992-66A7-4DB9-A50A-F8BC0F240420}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10E56992-66A7-4DB9-A50A-F8BC0F240420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB6BF13-462B-4E32-981B-37026D1FE8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB6BF13-462B-4E32-981B-37026D1FE8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB6BF13-462B-4E32-981B-37026D1FE8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB6BF13-462B-4E32-981B-37026D1FE8F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

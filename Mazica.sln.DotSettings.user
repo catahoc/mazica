@@ -1,3 +1,10 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CodeInspection/Highlighting/AnalysisEnabled/@EntryValue">SOLUTION</s:String>
-	<s:Boolean x:Key="/Default/Environment/SearchAndNavigation/MergeOccurences/@EntryValue">False</s:Boolean></wpf:ResourceDictionary>
+	<s:Boolean x:Key="/Default/Environment/SearchAndNavigation/MergeOccurences/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark0/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark0/Coords/@EntryValue">(Doc Ln 1 Col 10)</s:String>
+	<s:String x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark0/FileId/@EntryValue">4A0F7B38-5819-46ED-9147-26D6473EC4B4/d:Scripts/d:Play/f:Index.js</s:String>
+	<s:String x:Key="/Default/Housekeeping/Bookmarks/NumberedBookmarks/=Bookmark0/Owner/@EntryValue">NumberedBookmarkManager</s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=8695C82742DC4D7ABDC30AEECC63D244/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=8695C82742DC4D7ABDC30AEECC63D244/Name/@EntryValue">TestMazeJsonEncoding</s:String>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=8695C82742DC4D7ABDC30AEECC63D244/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;Elements&gt;&lt;UnitTestElement Provider="nUnit" Id="Mazica.Tests.JsonTests" type="NUnitTestFixtureElement" Project="4CA7AF03-AD12-44D1-A99C-4AD35D354655" /&gt;&lt;UnitTestElement Provider="nUnit" Id="Mazica.Tests.JsonTests.TestMazeJsonEncoding" ParentId="Mazica.Tests.JsonTests" type="NUnitTestElement" TypeName="Mazica.Tests.JsonTests" MethodName="TestMazeJsonEncoding" Project="4CA7AF03-AD12-44D1-A99C-4AD35D354655" /&gt;&lt;/Elements&gt;&lt;/Session&gt;</s:String></wpf:ResourceDictionary>

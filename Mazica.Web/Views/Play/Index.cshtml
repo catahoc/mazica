@@ -1,6 +1,9 @@
-﻿@{
+﻿@model MazeGen.MazeMatrix
+
+@{
 	ViewBag.Title = "Начать игру";
 	Layout = "/Views/Shared/layout.cshtml";
+	var jsonMaze = new JsonMaze(Model);
 }
 <div id="RenderContext"/>
 @section Scripts

@@ -13,6 +13,11 @@
 	    {
 		    _walls = new Wall[x,y,z];
 	    }
+		
+	    public Wall[,,] Raw
+	    {
+		    get { return _walls; }
+	    }
 
 	    public Wall this[Point p]
         {
